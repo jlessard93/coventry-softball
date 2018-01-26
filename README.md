@@ -1,5 +1,7 @@
 # CoventrySoftball
 
+If you want to push changes to remote using firebase hosting, follow [this link](https://scotch.io/tutorials/deploying-an-angular-cli-app-to-production-with-firebase).
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.6.
 
 ## Development server
