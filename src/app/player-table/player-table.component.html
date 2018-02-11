@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="homepage">
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">BA</th>
+            <th scope="col">GP</th>
+            <th scope="col">PA</th>
+            <th scope="col">AB</th>
+            <th scope="col">R</th>
+            <th scope="col">H</th>
+            <th scope="col">2B</th>
+            <th scope="col">3B</th>
+            <th scope="col">HR</th>
+            <th scope="col">RBI</th>
+            <th scope="col">BB</th>
+            <th scope="col">K</th>
+            <th scope="col">SF</th>
+            <th scope="col">TB</th>
+            <th scope="col">OBP</th>
+            <th scope="col">SLG</th>
+            <th scope="col">OPS</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let player of players$ | async">
+            <td>{{player.name}}</td>
+            <td>{{player.battingAvg | number: '0.3-5'}}</td>
+            <td>{{player.gamesPlayed}}</td>
+            <td>{{player.plateAppearances}}</td>
+            <td>{{player.atBats}}</td>
+            <td>{{player.runs}}</td>
+            <td>{{player.hits}}</td>
+            <td>{{player.doubles}}</td>
+            <td>{{player.triples}}</td>
+            <td>{{player.homeRuns}}</td>
+            <td>{{player.rbis}}</td>
+            <td>{{player.walks}}</td>
+            <td>{{player.strikeouts}}</td>
+            <td>{{player.sacrificeFlies}}</td>
+            <td>{{player.totalBases}}</td>
+            <td>{{player.obp}}</td>
+            <td>{{player.slg}}</td>
+            <td>{{player.ops}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
