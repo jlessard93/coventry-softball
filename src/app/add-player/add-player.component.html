@@ -1,0 +1,9 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()" #playerForm="ngForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" [(ngModel)]="name" class="form-control" id="name" name="name" placeholder="Player Name">
+    </div>
+    <button class="btn btn-primary" (click)="addPlayer(); playerForm.reset()">Add Player <i class="fas fa-user-plus"></i></button>
+  </form>
+</div>

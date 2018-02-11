@@ -1,10 +1,4 @@
-import { Component } from '@angular/core';
-import {AngularFirestore, AngularFirestoreCollection} from 'angularfire2/firestore';
-import {Observable} from "rxjs/Observable";
-
-export class Player {
-  name: string;
-}
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -13,15 +7,10 @@ export class Player {
 })
 export class AppComponent {
 
-  playersCollection: AngularFirestoreCollection<Player>;
-  players: Observable<Player[]>;
-
-  constructor(private db: AngularFirestore){
-
+  constructor() {
   }
 
-  ngOnInit(){
-    this.playersCollection = this.db.collection('players');
-    this.players = this.playersCollection.valueChanges();
+  ngOnInit() {
   }
+
 }
