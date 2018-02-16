@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AngularFirestore, AngularFirestoreCollection} from "angularfire2/firestore";
-import {Player} from "../interfaces/player";
+import {Player} from "../classes/player";
 import {Observable} from "rxjs/Observable";
 
 @Component({

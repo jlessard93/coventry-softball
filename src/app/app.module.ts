@@ -10,8 +10,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AddPlayerComponent } from './add-player/add-player.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { PlayerTableComponent } from './player-table/player-table.component';
-import {UpdatePlayerComponent} from "./update-player/update-player.component";
 import {FormsModule} from "@angular/forms";
+import { UpdatePlayerComponent } from './update-player/update-player.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import {FormsModule} from "@angular/forms";
     AddPlayerComponent,
     NavigationComponent,
     PlayerTableComponent,
-    UpdatePlayerComponent
+    UpdatePlayerComponent,
   ],
   imports: [
     BrowserModule,
