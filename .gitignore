@@ -43,3 +43,6 @@ testem.log
 Thumbs.db
 /node_modules/
 public/
+
+#compodoc
+/documentation/
