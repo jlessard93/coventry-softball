@@ -11,7 +11,6 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AddPlayerComponent } from './add-player/add-player.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { PlayerTableComponent } from './player-table/player-table.component';
-import {FormsModule} from "@angular/forms";
 import {CoreModule} from "./core/core.module";
 import {AuthGuard} from "./core/auth.guard";
 import {RoutingModule} from "./routing.module";
