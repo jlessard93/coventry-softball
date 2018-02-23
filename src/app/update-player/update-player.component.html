@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-outline-primary margin-top-small" id="playerDropdown" ngbDropdownToggle="">Players</button>
+        <div ngbDropdownMenu aria-labelledby="playerDropdown">
+          <button *ngFor="let player of players | async" (click)="getPlayer(player)" class="dropdown-item">{{player.name}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <form (ngSubmit)="onSubmit()" #updatePlayerForm="ngForm">
+        <div class="row margin-top-small">
+          <div class="col">
+            <label for="name">Name</label>
+            <input type="text" [disabled]="true" value="{{(player$ | async)?.name}}" [(ngModel)]="aPlayer.name" class="form-control" id="name" name="name">
+          </div>
+          <div class="col">
+            <label for="gamesPlayed">Games Played</label>
+            <input type="number" value="{{(player$ | async)?.gamesPlayed}}" [(ngModel)]="aPlayer.gamesPlayed" class="form-control" id="gamesPlayed" name="gamesPlayed">
+          </div>
+          <div class="col">
+            <label for="plateAppearances">Plate Appearances</label>
+            <input type="number" value="{{(player$ | async)?.plateAppearances}}" [(ngModel)]="aPlayer.plateAppearances" class="form-control" id="plateAppearances" name="plateAppearances">
+          </div>
+        </div>
+        <div class="row margin-top-small">
+          <div class="col">
+            <label for="runs">Runs</label>
+            <input type="number" value="{{(player$ | async)?.runs}}" [(ngModel)]="aPlayer.runs" class="form-control" id="runs" name="runs">
+          </div>
+          <div class="col">
+            <label for="singles">Singles</label>
+            <input type="number" value="{{(player$ | async)?.singles}}" [(ngModel)]="aPlayer.singles" class="form-control" id="singles" name="singles">
+          </div>
+          <div class="col">
+            <label for="doubles">Doubles</label>
+            <input type="number" value="{{(player$ | async)?.doubles}}" [(ngModel)]="aPlayer.doubles" class="form-control" id="doubles" name="doubles">
+          </div>
+          <div class="col">
+            <label for="triples">Triples</label>
+            <input type="number" value="{{(player$ | async)?.triples}}" [(ngModel)]="aPlayer.triples" class="form-control" id="triples" name="triples">
+          </div>
+          <div class="col">
+            <label for="homeRuns">Home Runs</label>
+            <input type="number" value="{{(player$ | async)?.homeRuns}}" [(ngModel)]="aPlayer.homeRuns" class="form-control" id="homeRuns" name="homeRuns">
+          </div>
+        </div>
+        <div class="row margin-top-small">
+          <div class="col">
+            <label for="rbis">RBIs</label>
+            <input type="number" value="{{(player$ | async)?.rbis}}" [(ngModel)]="aPlayer.rbis" class="form-control" id="rbis" name="rbis">
+          </div>
+          <div class="col">
+            <label for="walks">BB</label>
+            <input type="number" value="{{(player$ | async)?.walks}}" [(ngModel)]="aPlayer.walks" class="form-control" id="walks" name="walks">
+          </div>
+          <div class="col">
+            <label for="strikeouts">K</label>
+            <input type="number" value="{{(player$ | async)?.strikeouts}}" [(ngModel)]="aPlayer.strikeouts" class="form-control" id="strikeouts" name="strikeouts">
+          </div>
+          <div class="col">
+            <label for="sacrificeFlies">SF</label>
+            <input type="number" value="{{(player$ | async)?.sacrificeFlies}}" [(ngModel)]="aPlayer.sacrificeFlies" class="form-control" id="sacrificeFlies" name="sacrificeFlies">
+          </div>
+        </div>
+        <button class="btn btn-primary margin-top-small" (click)="updatePlayer(aPlayer); updatePlayerForm.reset()">Update Player <i class="fas fa-magic"></i></button>
+      </form>
+    </div>
+  </div>
+</div>
