@@ -11,6 +11,11 @@ import { AddPlayerComponent } from './add-player/add-player.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { PlayerTableComponent } from './player-table/player-table.component';
 import {FormsModule} from "@angular/forms";
+import {CoreModule} from "./core/core.module";
+import {AuthGuard} from "./core/auth.guard";
+import {RoutingModule} from "./routing.module";
+import { ScheduleComponent } from './schedule/schedule.component';
+import { HomeComponent } from './home/home.component';
 import { UpdatePlayerComponent } from './update-player/update-player.component';
 
 @NgModule({
@@ -19,6 +24,8 @@ import { UpdatePlayerComponent } from './update-player/update-player.component';
     AddPlayerComponent,
     NavigationComponent,
     PlayerTableComponent,
+    ScheduleComponent,
+    HomeComponent,
     UpdatePlayerComponent,
   ],
   imports: [
@@ -27,9 +34,11 @@ import { UpdatePlayerComponent } from './update-player/update-player.component';
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
     FormsModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    CoreModule,
+    RoutingModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
