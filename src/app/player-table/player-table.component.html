@@ -12,6 +12,7 @@
             <th scope="col">AB</th>
             <th scope="col">R</th>
             <th scope="col">H</th>
+            <th scope="col">1B</th>
             <th scope="col">2B</th>
             <th scope="col">3B</th>
             <th scope="col">HR</th>
@@ -28,12 +29,13 @@
           <tbody>
           <tr *ngFor="let player of players$ | async">
             <td>{{player.name}}</td>
-            <td>{{player.battingAvg | number: '0.3-5'}}</td>
+            <td>{{player.battingAvg | number: '0.3-3'}}</td>
             <td>{{player.gamesPlayed}}</td>
             <td>{{player.plateAppearances}}</td>
             <td>{{player.atBats}}</td>
             <td>{{player.runs}}</td>
             <td>{{player.hits}}</td>
+            <td>{{player.singles}}</td>
             <td>{{player.doubles}}</td>
             <td>{{player.triples}}</td>
             <td>{{player.homeRuns}}</td>
@@ -42,9 +44,9 @@
             <td>{{player.strikeouts}}</td>
             <td>{{player.sacrificeFlies}}</td>
             <td>{{player.totalBases}}</td>
-            <td>{{player.obp}}</td>
-            <td>{{player.slg}}</td>
-            <td>{{player.ops}}</td>
+            <td>{{player.obp | number: '0.3-3'}}</td>
+            <td>{{player.slg | number: '1.3-3'}}</td>
+            <td>{{player.ops | number: '1.3-3'}}</td>
           </tr>
           </tbody>
         </table>
