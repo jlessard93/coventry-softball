@@ -1,16 +1,2 @@
 <app-navigation></app-navigation>
-<main role="main" class="container">
-  <app-player-table></app-player-table>
-  <ngb-tabset>
-    <ngb-tab title="Add A Player">
-      <ng-template ngbTabContent>
-        <app-add-player></app-add-player>
-      </ng-template>
-    </ngb-tab>
-    <ngb-tab title="Update A Player">
-      <ng-template ngbTabContent>
-        <app-update-player></app-update-player>
-      </ng-template>
-    </ngb-tab>
-  </ngb-tabset>
-</main>
+<router-outlet></router-outlet>
