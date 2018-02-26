@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Hi test</h1>
+<div mat-dialog-content>
+  <p>ergeerwtgrthrth</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.errorMessage" cdkFocusInitial>Ok</button>
+</div>

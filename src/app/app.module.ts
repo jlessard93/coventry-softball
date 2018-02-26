@@ -17,6 +17,9 @@ import {RoutingModule} from "./routing.module";
 import { ScheduleComponent } from './schedule/schedule.component';
 import { HomeComponent } from './home/home.component';
 import { UpdatePlayerComponent } from './update-player/update-player.component';
+import { ErrorDialogComponent } from './error-dialog/error-dialog.component';
+import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from "@angular/material";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -27,6 +30,7 @@ import { UpdatePlayerComponent } from './update-player/update-player.component';
     ScheduleComponent,
     HomeComponent,
     UpdatePlayerComponent,
+    ErrorDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,9 +40,15 @@ import { UpdatePlayerComponent } from './update-player/update-player.component';
     FormsModule,
     NgbModule.forRoot(),
     CoreModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
     RoutingModule
   ],
-  providers: [AuthGuard],
-  bootstrap: [AppComponent]
+  providers: [
+    AuthGuard,
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
+  ],
+  bootstrap: [AppComponent],
+  entryComponents: [ ErrorDialogComponent ]
 })
 export class AppModule { }

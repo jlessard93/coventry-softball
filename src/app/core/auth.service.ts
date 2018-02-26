@@ -1,12 +1,11 @@
 import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
-
 import * as firebase from 'firebase/app';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {AngularFirestore, AngularFirestoreDocument} from 'angularfire2/firestore';
-
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/switchMap'
+import {MatDialog} from '@angular/material';
 
 interface User {
   uid: string;
@@ -21,7 +20,7 @@ export class AuthService {
 
   user: Observable<User>;
 
-  constructor(private afAuth: AngularFireAuth, private afs: AngularFirestore, private router: Router) {
+  constructor(private afAuth: AngularFireAuth, private afs: AngularFirestore, private router: Router, private dialog: MatDialog) {
 
     //// Get auth data, then get firestore user document || null
     this.user = this.afAuth.authState
@@ -40,10 +39,28 @@ export class AuthService {
     return this.oAuthLogin(provider);
   }
 
+  facebookLogin() {
+    const provider = new firebase.auth.FacebookAuthProvider();
+    return this.oAuthLogin(provider);
+  }
+
   private oAuthLogin(provider) {
     return this.afAuth.auth.signInWithPopup(provider)
       .then((credential) => {
         this.updateUserData(credential.user)
+      }).catch((error) => {
+        alert('you already have tried signing in with Google. Please try again and select "Connect with Google"');
+        // let dialogRef = this.dialog.open(ErrorDialogComponent, {
+        //   height: '400px',
+        //   width: '600px',
+        //   data: {
+        //     errorCode: error.code,
+        //     errorMessage: error.message,
+        //     email: error.email,
+        //     credential: error.credential,
+        //   }
+        // });
+
       })
   }
 
