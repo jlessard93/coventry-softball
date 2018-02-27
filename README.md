@@ -2,6 +2,8 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/jlessard93/coventry-softball.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/jlessard93/coventry-softball.svg?branch=master)](https://travis-ci.org/jlessard93/coventry-softball)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
 
 If you want to push changes to remote using firebase hosting, follow [this link](https://scotch.io/tutorials/deploying-an-angular-cli-app-to-production-with-firebase).
 
