@@ -1,7 +1,3 @@
-env:
-  global:
-    - CC_TEST_REPORTER_ID=571a5bd00eeabb28c0b00b0a8bfe6039858d495544b30e193a89139b5bbf173b
-
 language: node_js
 
 node_js:
@@ -11,21 +7,12 @@ before_script:
   - npm install -g --silent firebase-tools
   - npm install -g --silent @angular/cli
   - npm cache verify
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
 
 script:
   - ng build --prod
-  - bundle exec rspec
-
-after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 after_success:
   - test $TRAVIS_BRANCH = "master" && test $TRAVIS_PULL_REQUEST = "false" && firebase deploy --token $FIREBASE_TOKEN --non-interactive
-  - istanbul cover _mocha -- -R spec ./test/*.js
-  - codeclimate < ./coverage/lcov.info
 
 notifications:
   email:
