@@ -9,8 +9,14 @@
       <div class="col">
         <h3>Hi, GUEST</h3>
         <p>Login with Google or Facebook to get access to Warwick Softball Team TBD Website</p>
-        <button (click)="auth.googleLogin()"><i class="fab fa-google"></i> Connect with Google</button>
-        <button (click)="auth.facebookLogin()"><i class="fab fa-facebook"></i> Connect with Facebook</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <button type="button" class="btn btn-primary" (click)="auth.googleLogin()"><i class="fab fa-google"></i> Connect with Google</button>
+      </div>
+      <div id="facebookButton" class="col-sm-4">
+        <button type="button" class="btn btn-primary" (click)="auth.facebookLogin()"><i class="fab fa-facebook"></i> Connect with Facebook</button>
       </div>
     </div>
   </div>
