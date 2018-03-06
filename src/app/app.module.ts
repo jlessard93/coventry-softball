@@ -17,7 +17,6 @@ import {RoutingModule} from "./routing.module";
 import { ScheduleComponent } from './schedule/schedule.component';
 import { HomeComponent } from './home/home.component';
 import { UpdatePlayerComponent } from './update-player/update-player.component';
-import { ErrorDialogComponent } from './error-dialog/error-dialog.component';
 import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
@@ -29,8 +28,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     PlayerTableComponent,
     ScheduleComponent,
     HomeComponent,
-    UpdatePlayerComponent,
-    ErrorDialogComponent,
+    UpdatePlayerComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +46,6 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     AuthGuard,
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
   ],
-  bootstrap: [AppComponent],
-  entryComponents: [ ErrorDialogComponent ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

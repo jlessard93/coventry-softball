@@ -50,17 +50,6 @@ export class AuthService {
         this.updateUserData(credential.user)
       }).catch((error) => {
         alert('you already have tried signing in with Google. Please try again and select "Connect with Google"');
-        // let dialogRef = this.dialog.open(ErrorDialogComponent, {
-        //   height: '400px',
-        //   width: '600px',
-        //   data: {
-        //     errorCode: error.code,
-        //     errorMessage: error.message,
-        //     email: error.email,
-        //     credential: error.credential,
-        //   }
-        // });
-
       })
   }
 
