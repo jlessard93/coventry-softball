@@ -14,9 +14,11 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "1.7.2",
+    "@angular/compiler-cli": "^5.2.7",
+    "@angular/language-service": "^5.2.7",
     "@angular/animations": "^5.2.7",
     "@angular/cdk": "^5.2.4",
-    "@angular/cli": "1.7.2",
     "@angular/common": "^5.2.7",
     "@angular/compiler": "^5.2.7",
     "@angular/core": "^5.2.7",
