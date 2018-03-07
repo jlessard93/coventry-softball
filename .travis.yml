@@ -9,12 +9,13 @@ branches:
 before_script:
   - npm install -g --silent firebase-tools
   - npm install -g --silent @angular/cli
+  - npm cache verify
 
 script:
   - ng build --prod
 
 after_success:
-  - firebase deploy --token $FIREBASE_TOKEN --non-interactive
+  - firebase deploy --token $FIREBASE_TOKEN --non-interactive --debug
 
 notifications:
   email:
