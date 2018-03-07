@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-  - node
+  - "7"
 
 branches:
   only:
@@ -12,7 +12,7 @@ before_script:
   - npm cache verify
 
 script:
-  - ng build --prod
+  - ng build --prod --debug
 
 after_success:
   - firebase deploy --token $FIREBASE_TOKEN --non-interactive --debug
