@@ -4,8 +4,7 @@ import * as firebase from 'firebase/app';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {AngularFirestore, AngularFirestoreDocument} from 'angularfire2/firestore';
 import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/operator/switchMap'
-import {MatDialog} from '@angular/material';
+import 'rxjs/add/operator/switchMap';
 
 interface User {
   uid: string;
@@ -14,18 +13,24 @@ interface User {
   displayName?: string;
 }
 
+const ADMINS = [
+  'jlessard93@gmail.com',
+  'patriots15fan@gmail.com'
+];
 
 @Injectable()
 export class AuthService {
 
   user: Observable<User>;
+  isAdmin: boolean;
 
-  constructor(private afAuth: AngularFireAuth, private afs: AngularFirestore, private router: Router, private dialog: MatDialog) {
-
-    //// Get auth data, then get firestore user document || null
+  constructor(private afAuth: AngularFireAuth, private afs: AngularFirestore, private router: Router) {
+    this.isAdmin = false;
+    // Get auth data, then get firestore user document || null
     this.user = this.afAuth.authState
       .switchMap(user => {
         if (user) {
+          this.ifAdmin(user.email);
           return this.afs.doc<User>(`users/${user.uid}`).valueChanges()
         } else {
           return Observable.of(null)
@@ -33,6 +38,13 @@ export class AuthService {
       })
   }
 
+  ifAdmin(email) {
+    for (let adminEmail of ADMINS) {
+      if(email === adminEmail){
+        this.isAdmin = true;
+      }
+    }
+  }
 
   googleLogin() {
     const provider = new firebase.auth.GoogleAuthProvider();
@@ -53,7 +65,6 @@ export class AuthService {
       })
   }
 
-
   private updateUserData(user) {
     // Sets user data to firestore on login
 
@@ -69,7 +80,6 @@ export class AuthService {
     return userRef.set(data, {merge: true})
 
   }
-
 
   signOut() {
     this.afAuth.auth.signOut().then(() => {

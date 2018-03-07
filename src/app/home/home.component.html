@@ -24,21 +24,19 @@
 
 <!--user logged in-->
 <ng-template #authenticated>
-  <div *ngIf="auth.user | async as user">
-    <main role="main" class="container">
-      <app-player-table></app-player-table>
-      <ngb-tabset>
-        <!--<ngb-tab title="Add A Player">-->
-          <!--<ng-template ngbTabContent="">-->
-            <!--<app-add-player></app-add-player>-->
-          <!--</ng-template>-->
-        <!--</ngb-tab>-->
-        <ngb-tab title="Update A Player">
-          <ng-template ngbTabContent="">
-            <app-update-player></app-update-player>
-          </ng-template>
-        </ngb-tab>
-      </ngb-tabset>
-    </main>
-  </div>
+  <main role="main" class="container">
+    <app-player-table></app-player-table>
+    <ngb-tabset *ngIf="auth.isAdmin">
+      <ngb-tab title="Add A Player">
+        <ng-template ngbTabContent="">
+          <app-add-player></app-add-player>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab title="Update A Player">
+        <ng-template ngbTabContent="">
+          <app-update-player></app-update-player>
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
+  </main>
 </ng-template>

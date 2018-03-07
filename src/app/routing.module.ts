@@ -4,7 +4,7 @@ import {AuthGuard} from "./core/auth.guard";
 import {ScheduleComponent} from "./schedule/schedule.component";
 import {HomeComponent} from "./home/home.component";
 
-const appRoutes: Routes = [
+const APP_ROUTES: Routes = [
   {path: 'schedule', component: ScheduleComponent, canActivate: [AuthGuard]},
   {path: '', component: HomeComponent},
   {path: '', redirectTo: '/', pathMatch: 'full'}
@@ -13,7 +13,7 @@ const appRoutes: Routes = [
 @NgModule({
   imports:[
     RouterModule.forRoot(
-      appRoutes,
+      APP_ROUTES,
       {enableTracing: false} //<-- for debugging
     )
   ],
