@@ -1,7 +1,6 @@
 # CoventrySoftball
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/jlessard93/coventry-softball.svg)](https://greenkeeper.io/)
-[![Build Status](https://travis-ci.org/jlessard93/coventry-softball.svg?branch=master)](https://travis-ci.org/jlessard93/coventry-softball)
 [![Maintainability](https://api.codeclimate.com/v1/badges/69d7b8f1a125bcd78d77/maintainability)](https://codeclimate.com/github/jlessard93/coventry-softball/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/69d7b8f1a125bcd78d77/test_coverage)](https://codeclimate.com/github/jlessard93/coventry-softball/test_coverage)
 
