@@ -28,7 +28,7 @@
     "@angular/platform-browser-dynamic": "^5.2.7",
     "@angular/router": "^6.0.1",
     "@fortawesome/fontawesome": "^1.1.4",
-    "@ng-bootstrap/ng-bootstrap": "^1.0.0",
+    "@ng-bootstrap/ng-bootstrap": "^2.1.0",
     "angularfire2": "^5.0.0-rc.5-next",
     "bootstrap": "^4.0.0",
     "core-js": "^2.4.1",
