@@ -45,7 +45,7 @@
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "^10.10.3",
     "codelyzer": "^4.4.3",
-    "firebase-tools": "^4.0.0",
+    "firebase-tools": "^5.0.0",
     "jasmine-core": "~3.2.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~3.0.0",
