@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "coventry-softball-new": {
+    "coventry-softball": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/coventry-softball-new",
+            "outputPath": "dist/coventry-softball",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "coventry-softball-new:build"
+            "browserTarget": "coventry-softball:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "coventry-softball-new:build:production"
+              "browserTarget": "coventry-softball:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "coventry-softball-new:build"
+            "browserTarget": "coventry-softball:build"
           }
         },
         "test": {
@@ -107,7 +107,7 @@
         }
       }
     },
-    "coventry-softball-new-e2e": {
+    "coventry-softball-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -116,11 +116,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "coventry-softball-new:serve"
+            "devServerTarget": "coventry-softball:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "coventry-softball-new:serve:production"
+              "devServerTarget": "coventry-softball:serve:production"
             }
           }
         },
@@ -136,5 +136,5 @@
       }
     }
   },
-  "defaultProject": "coventry-softball-new"
+  "defaultProject": "coventry-softball"
 }
