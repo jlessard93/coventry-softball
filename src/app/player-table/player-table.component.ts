@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {AngularFirestore, AngularFirestoreCollection} from "angularfire2/firestore";
-import {Player} from "../classes/player";
-import {Observable} from "rxjs/Observable";
+import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
+import {Player} from '../classes/player';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-player-table',
