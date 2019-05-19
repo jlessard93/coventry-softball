@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from "angularfire2/firestore";
-import {Player} from "../classes/player";
-import {Observable} from "rxjs/Observable";
+import {AngularFirestore} from '@angular/fire/firestore';
+import {Player} from '../classes/player';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-add-player',
@@ -45,7 +45,7 @@ export class AddPlayerComponent implements OnInit {
     newPlayer.obp = 0;
     newPlayer.slg = 0;
     newPlayer.ops = 0;
-    this.afs.collection('players').add(<Player>newPlayer.getData());
+    this.afs.collection('players').add(<Player> newPlayer.getData());
   }
 
 }

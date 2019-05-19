@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {AngularFirestore, AngularFirestoreCollection} from "angularfire2/firestore";
-import {Player} from "../classes/player";
-import {Observable} from "rxjs/Observable";
+import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
+import {Player} from '../classes/player';
+import {Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-update-player',
@@ -21,13 +22,13 @@ export class UpdatePlayerComponent implements OnInit {
   ngOnInit() {
     this.aPlayer = new Player();
     this.playerCollection = this.afs.collection<Player>('players');
-    this.players = this.playerCollection.snapshotChanges().map(actions => {
+    this.players = this.playerCollection.snapshotChanges().pipe(map(actions => {
       return actions.map(a => {
         const data = a.payload.doc.data() as Player;
         const id = a.payload.doc.id;
         return {id, ...data};
       });
-    });
+    }));
   }
 
   onSubmit() {
@@ -75,7 +76,7 @@ export class UpdatePlayerComponent implements OnInit {
   }
 
   calculateAtBats(plateAppearances, walks, sacrificeFlies) {
-    //todo should be sacrifices instead of sac flies
+    // todo should be sacrifices instead of sac flies
     return (plateAppearances - walks - sacrificeFlies);
   }
 
